@@ -3,8 +3,8 @@ import React from 'react'
 
 const index = () => {
   return (
-    <View className='flex-1 items-center justify-center'>
-      <Text className='text-red-500'>Hinge Clone</Text>
+    <View>
+      <Text>index</Text>
     </View>
   )
 }
