@@ -10,10 +10,12 @@ import { useFonts } from "expo-font";
 
 cssInterop(VideoView, { className: { target: "style" } });
 cssInterop(Ionicons, { className: { target: "style" } });
+SplashScreen.preventAutoHideAsync();
 
 
 export default function RootLayout() {
   const [loaded, error] = useFonts(fonts);
+
 
 useEffect(() => {
   if (loaded || error) {
