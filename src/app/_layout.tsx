@@ -8,6 +8,7 @@ import { fonts } from "../constants/fonts";
 import { useFonts } from "expo-font";
 import { supabase } from "../lib/supabase";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { AuthProvider } from "../store/auth";
 
 const queryClient = new QueryClient();
 
@@ -36,10 +37,13 @@ if (!loaded && !error) {
 }
   return (
     <QueryClientProvider client={queryClient}>
+      <AuthProvider>
       <Stack screenOptions={{ headerShown: false }}>
          <Stack.Screen name="(app)" />
  
         </Stack>
+      </AuthProvider>
+    
     </QueryClientProvider>
 
   )

@@ -1,7 +1,12 @@
-import { Stack } from "expo-router";
+import { useAuth } from "@/store/auth";
+import { Redirect, Stack } from "expo-router";
 import React from "react";
 
 const _layout = () => {
+  const { session } = useAuth();
+  if (session) {
+    return <Redirect href="/(app)/(tabs)" />
+  }
   return (
     <Stack screenOptions={{ headerShown: false }}>
       <Stack.Screen name="signin" />
