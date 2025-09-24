@@ -1,6 +1,6 @@
-// import { useSignInWithOtp } from "@/api/auth";
-import { Fab } from "../components/fab";
-import { StackHeader } from "../components/stack-header";
+import { useSignInWithOtp } from "@/api/auth";
+import { Fab } from "../../components/fab";
+import { StackHeader } from "../../components/stack-header";
 import { router, useFocusEffect } from "expo-router";
 import { useMemo, useRef, useState } from "react";
 import {
@@ -16,34 +16,34 @@ import colors from "tailwindcss/colors";
 export default function Page() {
   const [phone, setPhone] = useState("");
   const phoneRef = useRef<TextInput>(null);
-//   const {
-//     mutate: signInWithOtp,
-//     isPending,
-//     isError,
-//     error,
-//     reset,
-//   } = useSignInWithOtp();
+  const {
+    mutate: signInWithOtp,
+    isPending,
+    isError,
+    error,
+    reset,
+  } = useSignInWithOtp();
 
-//   const handlePhoneChange = (text: string) => {
-//     if (isError) {
-//       reset();
-//     }
-//     setPhone(text);
-//   };
+  const handlePhoneChange = (text: string) => {
+    if (isError) {
+      reset();
+    }
+    setPhone(text);
+  };
 
   const isValid = useMemo(() => {
     return /^\+[1-9]\d{1,14}$/.test(phone);
   }, [phone]);
 
-//   const handleSubmit = () => {
-//     signInWithOtp(phone, {
-//       onSuccess: () =>
-//         router.push({
-//           pathname: "/otp",
-//           params: { phone },
-//         }),
-//     });
-//   };
+  const handleSubmit = () => {
+    signInWithOtp(phone, {
+      onSuccess: () =>
+        router.push({
+          pathname: "/otp",
+          params: { phone },
+        }),
+    });
+  };
 
   useFocusEffect(() => {
     phoneRef.current?.focus();
@@ -75,21 +75,21 @@ export default function Page() {
             textContentType="telephoneNumber"
             autoFocus={true}
             value={phone}
-            // onChangeText={handlePhoneChange}
+            onChangeText={handlePhoneChange}
             maxLength={16}
             ref={phoneRef}
           />
-          {/* {isError && (
+          {isError && (
             <Text className="text-red-500 text-sm text-center mt-4">
               {error.message}
             </Text>
-          )} */}
+          )}
         </View>
         <View className="items-end">
           <Fab
-            // disabled={!isValid || isPending}
-            // onPress={handleSubmit}
-            // loading={isPending}
+            disabled={!isValid || isPending}
+            onPress={handleSubmit}
+            loading={isPending}
           />
         </View>
       </View>

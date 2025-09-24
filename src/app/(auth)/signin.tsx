@@ -1,4 +1,4 @@
-import { VideoBackground } from "../components/video-background";
+import { VideoBackground } from "../../components/video-background";
 import { Link, Stack } from "expo-router";
 import { Pressable, StatusBar, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
