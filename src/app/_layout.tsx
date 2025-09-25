@@ -9,11 +9,13 @@ import { useFonts } from "expo-font";
 import { supabase } from "../lib/supabase";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { AuthProvider } from "../store/auth";
+import { Image } from "expo-image";
 
 const queryClient = new QueryClient();
 
 cssInterop(VideoView, { className: { target: "style" } });
 cssInterop(Ionicons, { className: { target: "style" } });
+cssInterop(Image, { className: { target: "style" } });
 SplashScreen.preventAutoHideAsync();
 
 
