@@ -26,9 +26,10 @@ const hinge = () => {
         <View className="flex-row items-center justify-between">
           <HingeLogo width={64} />
           <View className="flex-row items-center gap-4">
-            {/* <Link href={"/preferences"} suppressHighlighting>
+                
+                <Link href={"/preferences"} suppressHighlighting>
               <Ionicons name="options-outline" className="text-2xl" />
-            </Link> */}
+            </Link>
             <Link href={"/settings"} suppressHighlighting>
               <Ionicons name="settings-outline" className="text-2xl" />
             </Link>
