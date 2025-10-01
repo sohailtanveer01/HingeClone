@@ -37,7 +37,7 @@ const hinge = () => {
         <View className="items-center gap-2 my-12">
           <Pressable
             className="h-32 aspect-square rounded-full border-4 border-fuchsia-900 p-1"
-           
+            onPress={() => router.push("/profile")}
           >
             <Image
               source={profile?.avatar_url}
