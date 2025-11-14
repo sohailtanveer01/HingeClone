@@ -1,5 +1,5 @@
 import { useAuth } from "@/store/auth";
-// import { EditProvider } from "@/store/edit";
+import { EditProvider } from "@/store/edit";
 import { Redirect, Stack } from "expo-router";
 import { Text } from "react-native";
 
@@ -15,7 +15,7 @@ export default function Layout() {
   }
 
   return (
-    // <EditProvider>
+    <EditProvider>
       <Stack
         screenOptions={{
           headerShown: false,
@@ -43,6 +43,6 @@ export default function Layout() {
           options={{ animation: "slide_from_bottom" }}
         />
       </Stack>
-    // </EditProvider>
+    </EditProvider>
   );
 }
