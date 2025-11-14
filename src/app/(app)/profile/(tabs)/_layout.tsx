@@ -3,7 +3,7 @@ import { StackHeaderV3 } from "@/components/stack-header-v3";
 import { MaterialTopTabs } from "@/layouts/material-top-tabs";
 import { useEdit } from "../../../../store/edit";
 import { router, Stack } from "expo-router";
-// import { isEqual } from "lodash";
+import { isEqual } from "lodash";
 import { Alert } from "react-native";
 import colors from "tailwindcss/colors";
 
